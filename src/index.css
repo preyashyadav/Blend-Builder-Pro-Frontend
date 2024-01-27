@@ -1,0 +1,387 @@
+@import url("https://fonts.googleapis.com/css2?family=Lexend&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+
+/* ---Scroll Bar -------- */
+/* Apply styles to the entire HTML document */
+html {
+  /* Set a fixed height and overflow to enable scrolling */
+  height: 100%;
+  overflow-y: scroll;
+
+  /* Define the scrollbar width and color */
+  scrollbar-width: thin;
+  scrollbar-color: #305580 #ecf0f1;
+}
+
+/* For Webkit browsers (Chrome, Safari) */
+html::-webkit-scrollbar {
+  width: 18px;
+}
+
+html::-webkit-scrollbar-thumb {
+  background-color: rgba(255, 255, 255, 0.362);
+  box-shadow: 8px 0 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(255, 255, 255, 0.24);
+  border-radius: 4px;
+}
+
+html::-webkit-scrollbar-track {
+  background-color: #84a4d5;
+}
+
+/* For Firefox */
+html {
+  scrollbar-width: thin;
+  scrollbar-color: #3498db #ecf0f1;
+}
+
+/* ----Sidebar  + Screen ---- */
+.width-80 {
+  width: 85%;
+  float: right;
+}
+
+@media (max-width: 769px) {
+  .width-80 {
+    width: 100%;
+    float: right;
+  }
+}
+
+body {
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+  background: #83a4d4; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #b6fbff,
+    #83a4d4
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #b6fbff,
+    #83a4d4
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
+.home-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+.home-head {
+  font-family: "Lexend", sans-serif;
+  color: #4b7d83;
+  font-weight: bolder;
+  font-size: 3.5rem;
+}
+
+.main-head {
+  font-family: "Lexend", sans-serif;
+  color: #4b7d83;
+  font-weight: bolder;
+}
+
+.sub-head {
+  font-family: "Lexend", sans-serif;
+  color: #699ba2;
+  font-weight: 500;
+}
+
+.sub-sub-head {
+  color: #4b6f74;
+}
+
+.home-content {
+  font-size: 1.2rem;
+  color: #2d484b;
+}
+
+img.vit-home-logo {
+  width: 200px;
+}
+
+img.fl-home-logo {
+  width: 200px;
+}
+
+/* Styles for desktop/laptop view */
+@media (min-width: 769px) {
+  .logo-container {
+    display: flex;
+    justify-content: center;
+  }
+
+  .vit-home-logo,
+  .fl-home-logo {
+    margin: 1rem;
+  }
+}
+
+/* Styles for mobile view (below 769px) */
+@media (max-width: 768px) {
+  .home-head {
+    font-size: 2.25rem !important;
+  }
+  .logo-container {
+    display: flex;
+    justify-content: center;
+    justify-content: space-evenly;
+  }
+
+  img.vit-home-logo,
+  img.fl-home-logo {
+    width: 100px;
+  }
+}
+
+.home-img {
+  display: flex;
+  justify-content: center;
+}
+
+.home-img-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.robot,
+.polymer,
+.blob {
+  position: absolute;
+}
+
+@keyframes levitateAnimation {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px); /* Adjust the vertical distance as needed */
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.robot {
+  animation: levitateAnimation 2s infinite linear; /* Adjust the duration and other properties as needed */
+}
+
+@keyframes flickerWiggleMoveAnimation {
+  0% {
+    opacity: 1;
+    transform: translateX(0) rotate(0deg);
+  }
+  25% {
+    opacity: 0.7;
+    transform: translateX(2px) rotate(2deg);
+  }
+  50% {
+    opacity: 1;
+    transform: translateX(-2px) rotate(-2deg);
+  }
+  75% {
+    opacity: 0.7;
+    transform: translateX(2px) rotate(2deg);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0) rotate(0deg);
+  }
+}
+
+.polymer {
+  animation: flickerWiggleMoveAnimation 3s infinite;
+}
+
+.robot img,
+.polymer img,
+.blob img {
+  width: 500px;
+  height: auto; /* Ensure the aspect ratio is maintained */
+}
+
+@media screen and (max-width: 900px) {
+  .robot img,
+  .polymer img,
+  .blob img {
+    width: 300px;
+    height: auto; /* Ensure the aspect ratio is maintained */
+  }
+
+  .blob {
+    position: relative !important;
+  }
+
+  .home-content {
+    /* border: 2px solid black; */
+    padding: 1rem;
+    text-align: justify;
+  }
+
+  .home-img {
+    padding: 1rem;
+  }
+}
+
+/* -------Data Explore -------------- */
+.data-explore-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* min-height: 100vh; */
+  padding: 1rem;
+}
+
+.form-visible {
+  position: absolute !important;
+}
+
+/* ------Feature Selection -------- */
+
+.feature-container {
+  padding: 2rem 1rem;
+}
+
+Button,
+.toggle-custom {
+  margin: 5px !important;
+}
+
+/* -------Bound Selection ------ */
+
+.bound-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 1rem;
+}
+
+.custom-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0;
+}
+
+/* Style for table headers */
+.custom-table th {
+  background-color: #4b6f74c9 !important; /* Use the primary color for the header background */
+  color: #ffffff !important; /* Use white for the header text color */
+  border: 1px solid #4b6f74c9 !important; /* Use the primary color for the header borders */
+  padding: 8px !important;
+  text-align: left !important;
+}
+
+/* Style for alternate rows */
+.custom-table tr:nth-child(even) {
+  background-color: #4b6f7493 !important; /* Use a slightly darker shade for even rows */
+}
+
+/* Style for table cells */
+.custom-table td {
+  border: 1px solid #4b6f74c9 !important; /* Use the primary color for the cell borders */
+  padding: 8px !important;
+}
+
+/* Hover effect on table rows */
+.custom-table tr:hover {
+  background-color: #4b6f74e6 !important; /* Use a slightly lighter shade for the hover effect */
+}
+
+/* ---Desired Container---- */
+
+.desired-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 1rem;
+}
+
+/* --Optimized Container */
+
+.optimized-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 1rem;
+}
+
+/* -------input css------- */
+
+input[type="text"] {
+  background: rgba(255, 255, 255, 0.2) !important;
+  /* box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37); */
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(255, 255, 255, 0.24) !important;
+  color: #4b6f74 !important;
+  font-weight: bolder !important;
+}
+
+input[type="file"] {
+  background: rgba(255, 255, 255, 0.2) !important;
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(255, 255, 255, 0.24) !important;
+  color: #4b6f74 !important;
+  font-weight: bolder !important;
+}
+
+input[type="text"]:focus,
+input[type="file"]:focus {
+  background: rgba(255, 255, 255, 0.567) !important;
+  box-shadow: 0 12px 36px 0 #4b6f74c9;
+}
+
+/* ---------buttons css ------ */
+
+.custom-primary {
+  background: rgba(255, 255, 255, 0.2) !important;
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(255, 255, 255, 0.24) !important;
+  color: #4b6f74 !important;
+  font-weight: bolder !important;
+  transition: all 0.3s ease; /* Add a smooth transition for the shiny effect */
+  padding: 0.4rem 0.6rem;
+  border-radius: 0.4rem;
+}
+
+.custom-primary:hover {
+  background: rgba(255, 255, 255, 0.567) !important; /* Shiny effect on hover */
+  box-shadow: 0 12px 36px 0 rgba(31, 38, 135, 0.5); /* Adjusted shadow on hover for a shinier effect */
+}
+
+.custom-opposite {
+  background: #4b6f74c9 !important; /* Opposite color for background */
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid #4b6f7498 !important; /* Opposite color for border */
+  color: rgba(255, 255, 255, 0.9) !important; /* Opposite color for text */
+  font-weight: bolder !important;
+  padding: 0.4rem 0.6rem;
+  border-radius: 0.4rem;
+  transition: all 0.3s ease; /* Add a smooth transition for the shiny effect */
+}
+
+.custom-opposite:hover {
+  background: #2d4346e6 !important; /* Shiny effect on hover */
+  box-shadow: 0 12px 36px 0 rgba(31, 38, 135, 0.5); /* Adjusted shadow on hover for a shinier effect */
+}
